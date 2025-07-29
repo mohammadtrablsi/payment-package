@@ -15,6 +15,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // ✅ ضروري للسيرفرات خلف proxy مثل Vercel أو Heroku
+console.log('hello there');
 app.set('trust proxy', true);
 
 // ✅ ملفات ثابتة (CSS, JS, صور)
