@@ -7,7 +7,7 @@ const session = require("express-session");
 const userAgentFilter = require("./middlewares/userAgentFilter");
 const cookieParser = require("cookie-parser");
 const ConnectDB = require("./config/config");
-const rateLimiterMiddleware = require("./middlewares/limiter");
+// const rateLimiterMiddleware = require("./middlewares/limiter");
 const connectKeysDB = require("./config/keysDatabase");
 
 
@@ -37,8 +37,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ middleware التحديد والفلترة
-app.use(rateLimiterMiddleware);
+// // ✅ middleware التحديد والفلترة
+// app.use(rateLimiterMiddleware);
 
 // ✅ بعد limiter (ما يعيق التنفيذ)
 app.use(userAgentFilter);
