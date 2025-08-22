@@ -25,7 +25,7 @@ const rateLimiterMiddleware = async (req, res, next) => {
       rateLimitData = new RateLimit({
         key,
         ipList: [],
-        points: isUser ? 10 : 50,
+        points: isUser ? 1000 : 50,
         lastReset: new Date(),
         blockedUntil: null,
       });
