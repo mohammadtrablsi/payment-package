@@ -9,11 +9,22 @@ const cookieParser = require("cookie-parser");
 const ConnectDB = require("./config/config");
 // const rateLimiterMiddleware = require("./middlewares/limiter");
 const connectKeysDB = require("./config/keysDatabase");
+const helmet  = require("helmet");
 
 
 const app = express();
 const port = process.env.PORT || 3001;
-
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'"],
+      imgSrc: ["'self'"],
+      connectSrc: ["'self'"],
+      frameSrc: ["'self'"],
+    },
+  }))
 // ✅ ضروري للسيرفرات خلف proxy مثل Vercel أو Heroku
 console.log('hello there');
 app.set('trust proxy', true);
