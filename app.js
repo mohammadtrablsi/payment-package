@@ -9,24 +9,10 @@ const cookieParser = require("cookie-parser");
 const ConnectDB = require("./config/config");
 // const rateLimiterMiddleware = require("./middlewares/limiter");
 const connectKeysDB = require("./config/keysDatabase");
-const helmet  = require("helmet");
 
 
 const app = express();
 const port = process.env.PORT || 3001;
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
-      styleSrc: ["'self'", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net"],
-      imgSrc: ["'self'"],
-      connectSrc: ["'self'"],
-      frameSrc: ["'self'"], // من أين الموقع يقدر يحمل iframe
-      frameAncestors: ["'self'", "https://payment-package-4jxy.onrender.com"] // مين مسموح يعرض الموقع في iframe
-    },
-  })
-);
 
 // ✅ ضروري للسيرفرات خلف proxy مثل Vercel أو Heroku
 console.log('hello there');
