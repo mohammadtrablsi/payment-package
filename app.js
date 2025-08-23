@@ -18,8 +18,15 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      styleSrc: ["'self'"],
+      scriptSrc: [
+        "'self'",
+        "https://cdn.jsdelivr.net"
+      ],
+      styleSrc: [
+        "'self'",
+        "https://fonts.googleapis.com",
+        "https://cdn.jsdelivr.net" 
+      ],
       imgSrc: ["'self'"],
       connectSrc: ["'self'"],
       frameSrc: ["'self'"],
