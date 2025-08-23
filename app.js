@@ -18,20 +18,16 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: [
-        "'self'",
-        "https://cdn.jsdelivr.net"
-      ],
-      styleSrc: [
-        "'self'",
-        "https://fonts.googleapis.com",
-        "https://cdn.jsdelivr.net" 
-      ],
+      scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
+      styleSrc: ["'self'", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net"],
       imgSrc: ["'self'"],
       connectSrc: ["'self'"],
-      frameSrc: ["'self'"],
+      frameSrc: ["'self'"], // من أين الموقع يقدر يحمل iframe
+      frameAncestors: ["'self'", "https://payment-package-4jxy.onrender.com"] // مين مسموح يعرض الموقع في iframe
     },
-  }))
+  })
+);
+
 // ✅ ضروري للسيرفرات خلف proxy مثل Vercel أو Heroku
 console.log('hello there');
 app.set('trust proxy', true);
