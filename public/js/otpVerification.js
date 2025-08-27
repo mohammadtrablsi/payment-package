@@ -14,7 +14,7 @@ const pathParts = window.location.pathname.split("/");
 const publicID = pathParts[pathParts.length - 1];
 window.addEventListener("DOMContentLoaded", async () => {
     // const baseURL = "https://payment-package-ocht.onrender.com";
-    const baseURL = "https://payment-package-4jxy.onrender.com";
+    const baseURL = "https://payment-package-1.onrender.com";
     // const baseURL = "http://localhost:3001";
     let fixedData;
     try {
