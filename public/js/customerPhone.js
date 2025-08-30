@@ -198,7 +198,7 @@ document.getElementById("amountInfo").innerHTML =
         showToast("Verification code sent successfully ✅", "success");
         setTimeout(() => {
           window.location.href = `${baseURL}/api/clients/otpVerification-page/${otpPageID}`;
-        }, 3000);
+        }, 0);
       } else {
         showToast(result.message || "Something went wrong.");
       }
